@@ -1,0 +1,16 @@
+#include <Servo.h> 
+
+Servo drumservo;
+int potpin = 0; 
+int val;
+void setup() {
+  pinMode(LED_BUILTIN, OUTPUT); // this will help us know that it is working with the built in LED on the board.
+  drumservo.attach(9); // this is the pin the signals will go through aka attaching the servo.
+  
+}
+
+void loop(){
+  val = map(val, 180, 180, 140, 100);     // scale it to use it with the servo (value between 0 and 180)
+  drumservo.write(val);
+}
+  
